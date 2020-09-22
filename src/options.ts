@@ -1,16 +1,16 @@
-const page = document.getElementById("buttonDiv");
-const kButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
+const page = document.getElementById('buttonDiv')
+const kButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1']
 const constructOptions = (kButtonColors: string[]) => {
-  for (let item of kButtonColors) {
-    const button = document.createElement("button");
-    button.style.backgroundColor = item;
-    button.addEventListener("click", () => {
+  for (const item of kButtonColors) {
+    const button = document.createElement('button')
+    button.style.backgroundColor = item
+    button.addEventListener('click', () => {
       chrome.storage.sync.set({ color: item }, function () {
-        console.log("color is " + item);
-      });
-    });
+        console.log('color is ' + item)
+      })
+    })
 
-    page?.appendChild(button);
+    page?.appendChild(button)
   }
-};
-constructOptions(kButtonColors);
+}
+constructOptions(kButtonColors)
