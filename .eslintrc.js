@@ -4,8 +4,8 @@ module.exports = {
   plugins: ['prettier', '@typescript-eslint'],
   rules: {
     'prettier/prettier': 'error',
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': 'warn',
+    'no-debugger': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
   },
   extends: [

@@ -5,7 +5,8 @@
   "main": "background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run typecheck && parcel build manifest.json",
+    "build": "concurrently npm:typecheck npm:build:parcel",
+    "build:parcel": "parcel build manifest.json",
     "dev": "parcel manifest.json",
     "typecheck": "tsc --noEmit src/background.ts src/options.ts src/popup.ts",
     "lint": "eslint src/** --fix "
@@ -23,6 +24,7 @@
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "concurrently": "^5.3.0"
   }
 }
