@@ -1,0 +1,21 @@
+{
+  "name": "plural_speed_extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run typecheck && parcel build manifest.json",
+    "dev": "parcel manifest.json",
+    "typecheck": "tsc --noEmit src/background.ts src/options.ts src/popup.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "0.0.123",
+    "parcel": "^1.12.4",
+    "parcel-plugin-web-extension": "^1.6.1",
+    "typescript": "^4.0.3"
+  }
+}
