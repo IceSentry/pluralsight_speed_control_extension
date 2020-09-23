@@ -68,5 +68,5 @@
     "jsxFactory": "h"
   },
   "exclude": ["node_modules"],
-  "files": ["src/background.ts", "src/options.ts", "src/popup.tsx"]
+  "files": ["src/background.ts", "src/options.tsx", "src/popup.tsx"]
 }
