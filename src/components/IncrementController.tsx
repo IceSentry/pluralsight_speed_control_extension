@@ -14,6 +14,6 @@ export const IncrementController = () => {
   }, [increment])
 
   return (
-    <input type="number" step="0.05" value={increment} onChange={onChange} />
+    <input type="number" step="0.05" value={increment} onInput={onChange} />
   )
 }

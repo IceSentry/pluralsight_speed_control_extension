@@ -1,9 +1,5 @@
 /*global chrome*/
 
-export const setSyncColor = (color: string) => {
-  chrome.storage.sync.set({ color })
-}
-
 export const executeScriptOnPage = (code: string): Promise<unknown[]> => {
   return new Promise((resolve) => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -13,9 +9,7 @@ export const executeScriptOnPage = (code: string): Promise<unknown[]> => {
         {
           code,
         },
-        (result) => {
-          resolve(result)
-        }
+        (result) => resolve(result)
       )
     })
   })
@@ -37,7 +31,7 @@ export const setPlayerSpeed = (speed: number) => {
 }
 
 export const getPlayerSpeed = async () => {
-  const speed = await executeScriptOnPage(`
+  const result = await executeScriptOnPage(`
   (function () {
     const playerSettings = localStorage.getItem('ps-embeddable-player-settings')
     if (playerSettings) {
@@ -45,12 +39,11 @@ export const getPlayerSpeed = async () => {
       return localPlayerSettings.playbackSpeed
     }
   })()`)
-  return speed[0] as number
+  return result[0] as number
 }
 
 export const reloadActiveTab = () => {
-  executeScriptOnPage(`
-  (function () {
-    location.reload()
-  })()`)
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.reload(tabs[0]?.id as number)
+  })
 }
