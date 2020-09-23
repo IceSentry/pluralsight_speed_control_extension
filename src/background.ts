@@ -1,4 +1,4 @@
-import { setSyncColor } from './utils'
+import { setSyncColor } from './chromeService'
 /*global chrome*/
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -8,7 +8,7 @@ chrome.runtime.onInstalled.addListener(() => {
       {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { hostEquals: 'developer.chrome.com' },
+            pageUrl: { hostEquals: 'app.pluralsight.com' },
           }),
         ],
         actions: [new chrome.declarativeContent.ShowPageAction()],

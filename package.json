@@ -2,14 +2,14 @@
   "name": "plural_speed_extension",
   "version": "1.0.0",
   "description": "",
-  "main": "background.js",
+  "main": "src/background.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "concurrently npm:typecheck npm:build:parcel",
     "build:parcel": "parcel build manifest.json",
     "dev": "parcel manifest.json",
     "typecheck": "tsc",
-    "lint": "eslint src/** --fix "
+    "lint": "eslint src/**.tsx --fix "
   },
   "keywords": [],
   "author": "",
@@ -35,5 +35,8 @@
     "react": "preact/compat",
     "react-dom/test-utils": "preact/test-utils",
     "react-dom": "preact/compat"
-  }
+  },
+  "browserslist": [
+    "since 2018-10"
+  ]
 }

@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact'
-import { setSyncColor } from '../utils'
+import { setSyncColor } from '../chromeService'
 
 type SetColorType = (color: string) => void
 
@@ -15,7 +15,7 @@ const ColorPickerButton = (props: {
   return <button style={{ backgroundColor: props.color }} onClick={onClick} />
 }
 
-const ColorPicker = (props: { setColor: SetColorType }) => {
+export const ColorPicker = (props: { setColor: SetColorType }) => {
   const colors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1']
 
   return (
@@ -29,5 +29,3 @@ const ColorPicker = (props: { setColor: SetColorType }) => {
     </Fragment>
   )
 }
-
-export default ColorPicker

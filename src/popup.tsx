@@ -2,7 +2,8 @@
 
 import { h, render, Fragment } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
-import ColorPicker from './components/ColorPicker'
+import { ColorPicker } from './components/ColorPicker'
+import { SpeedController } from './components/SpeedController'
 
 const App = () => {
   const [color, setColor] = useState('')
@@ -30,6 +31,7 @@ const App = () => {
         value={color}
         style={{ backgroundColor: color }}
       />
+      <SpeedController />
     </Fragment>
   )
 }
