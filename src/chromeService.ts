@@ -48,8 +48,9 @@ export const getPlayerSpeed = async () => {
   return speed[0] as number
 }
 
-export const refreshPage = () => {
-  executeScriptOnPage(`(function () {
+export const reloadActiveTab = () => {
+  executeScriptOnPage(`
+  (function () {
     location.reload()
-  })`)
+  })()`)
 }
