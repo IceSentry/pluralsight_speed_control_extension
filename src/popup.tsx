@@ -4,6 +4,7 @@ import { h, render, Fragment } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 import { ColorPicker } from './components/ColorPicker'
 import { SpeedController } from './components/SpeedController'
+import { ReloadButton } from './components/ReloadButton'
 
 const App = () => {
   const [color, setColor] = useState('')
@@ -32,6 +33,7 @@ const App = () => {
         style={{ backgroundColor: color }}
       />
       <SpeedController />
+      <ReloadButton />
     </Fragment>
   )
 }

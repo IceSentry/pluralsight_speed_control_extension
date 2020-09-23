@@ -1,10 +1,6 @@
 import { h, Fragment } from 'preact'
 import { useEffect, useState } from 'preact/compat'
-import {
-  getPlayerSpeed,
-  setPlayerSpeed,
-  reloadActiveTab,
-} from '../chromeService'
+import { getPlayerSpeed, setPlayerSpeed } from '../chromeService'
 
 const INCREMENT = 0.25
 
@@ -34,16 +30,11 @@ export const SpeedController = () => {
     setSpeed(speed - INCREMENT)
   }
 
-  const reload = () => {
-    reloadActiveTab()
-  }
-
   return (
     <Fragment>
       <button onClick={decreaseSpeed}>{'<<'}</button>
       <input type="number" value={speed} />
       <button onClick={increaseSpeed}>{'>>'}</button>
-      <button onClick={reload}>Refresh</button>
     </Fragment>
   )
 }

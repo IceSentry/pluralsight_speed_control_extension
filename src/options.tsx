@@ -1,7 +1,6 @@
 import { h, render } from 'preact'
-import { ColorPicker } from './components/ColorPicker'
-import { setSyncColor } from './chromeService'
+import { SpeedController } from './components/SpeedController'
 
-const App = () => <ColorPicker setColor={setSyncColor} />
+const App = () => <SpeedController />
 
 render(<App />, document.getElementById('root') as Element)
